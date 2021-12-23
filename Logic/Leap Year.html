@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Leap Year</h3>
+
+<label for="year1"> Start Year</label>
+<input type="text" id="year1"><br>
+<label for="year2">End Year</label>
+<input type="text" id="year2"><br>
+
+<button onclick="myFunction()" id="myBtn">Check</button>
+
+<p id="test"></p>
+<p id="return"></p>
+
+
+<script>
+function myFunction() {
+  var year1 = document.getElementById("year1").value;
+  var year2 = document.getElementById("year2").value;
+  var result ="";
+  year1 = parseInt(year1);
+  year2 =parseInt(year2);
+  
+    
+    for(var i= year1+4;i<= year2;i+=4){
+        result += i.toString()+", ";
+    }
+
+  result = result.slice(0,result.length-2);  
+  document.getElementById("return").innerHTML = result;  
+}
+</script>
+
+</body>
+</html>

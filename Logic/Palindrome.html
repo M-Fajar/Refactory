@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Polindrome</h3>
+
+<input type="text" id="user-input">
+<button onclick="myFunction()" id="myBtn">Check</button>
+
+<p id="return"></p>
+
+<script>
+function myFunction() {
+  var text = document.getElementById("user-input").value;
+  
+    text = text.toLowerCase();
+    for(var i = 0;i<=text.length/2;i++){
+        
+        if(text[i] != text[(text.length-1)-i]){
+            document.getElementById("return").innerHTML = text +" is not Palindrome";            
+            return ;
+        }
+    }
+
+
+  document.getElementById("return").innerHTML = text +" is Palindrome";  
+}
+</script>
+
+</body>
+</html>

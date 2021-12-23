@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Reverse word</h3>
+
+<input type="text" id="user-input">
+<button onclick="myFunction()" id="myBtn">Reverse</button>
+
+<h6>After Reverse</h6>
+<p id="return"></p>
+
+<script>
+function myFunction() {
+  var text = document.getElementById("user-input").value;
+  var result = "";
+  var words = text.split(" ");
+
+  for(var i=0;i<words.length;i++){
+      var word = words[i];
+      
+      for(var j = 0;j<word.length;j++){
+          
+          if(word.charCodeAt(j) >= 65 && word.charCodeAt(j) <= 90){
+            result += word[(word.length-1)-j].toUpperCase();
+          }
+          else{
+            result += word[(word.length-1)-j].toLowerCase();
+          }
+      }
+      result += " ";
+
+  }
+    
+  document.getElementById("return").innerHTML = result;  
+}
+</script>
+
+</body>
+</html>

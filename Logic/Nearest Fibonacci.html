@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Nearest Fibonacci</h3>
+
+<p>Input some number,separate comma <br>
+    example : 15,3,2</p>
+
+<input type="text" id="user-input">
+<button onclick="myFunction()" id="myBtn">Process</button>
+
+<p id="return"></p>
+<p id="ex"></p>
+
+<script>
+function myFunction() {
+  var text = document.getElementById("user-input").value;
+  var arr = text.split(',') ;
+  var sum =0;
+  var result;
+  for(var i = 0;i<arr.length;i++){
+        sum +=parseInt(arr[i]);
+  }
+  
+  var a=0,b=1;
+  var isFound = false;
+  while(!isFound){
+      var next = a+b;
+       a = b;
+       b = next;
+       
+       if(sum >=a && sum<=b){
+           
+           var selA = sum - a;
+           var selB = b - sum; 
+
+           if(selA>selB){
+                result = selB;
+           }
+           else{ result = selA*-1;}
+           isFound = true;
+       }
+        
+  }
+
+  document.getElementById("return").innerHTML ="To Nearest Fibbonaci = "+ result;  
+  document.getElementById("ex").innerHTML = "Because "+sum + " + ("+result+") = "+ (sum+result);  
+}
+</script>
+
+</body>
+</html>
